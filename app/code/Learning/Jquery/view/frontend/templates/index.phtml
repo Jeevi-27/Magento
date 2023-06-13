@@ -31,12 +31,12 @@ declare(strict_types=1);
 
 </form>
 
-<div id="my-collapsible" data-mage-init='{"collapsible":{}}'>
+<div id="my-collapsible" data-mage-init='{"collapsible":{"ajaxContent":true}}'>
     <div data-role="title">
         <h2>click the Go button  <button data-role="trigger">Go</button> </h2>
     </div>
     <div id="example" data-role="content">
-      This is collapse content
+     <a href="<?= $block->getViewFileUrl('Learning_Jquery/example-content.html')?>" data-ajax="true"></a>
 
     </div>
 </div>    
