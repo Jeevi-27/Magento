@@ -2,5 +2,32 @@
 declare(strict_types=1);
 
 ?>
+<form class="form my-form" action="" method="post" data-mage-init='{"validation":{}}'>
+    <div class="control">
 
-<h2>Welcome to Learning</h2>
+    <input required="true" name="first_name" type="text" placeholder="First Name" />
+
+    <input class="input-text required" name="last_name" placeholder="Last Name" type="text" />
+    
+    <input type="text" name="email" id="email" class="input-text" placeholder="<?= _('Your Email') ?>"   data-validate="{required : true,  'validate-email':true}">
+    
+    </div>
+    <button type="submit" class="action primary"> <?= _('Submit') ?></button>
+</form>
+<hr>
+
+<form class="form my-form" action="" method="post" data-mage-init='{
+    "validation":{
+        "rules": {
+            "fieldname": {
+                "required":true
+            }
+        }
+    }
+}'>
+
+<input name="fieldname" type="text" placeholder="First Name" />
+<button type="submit" class="action primary"> <?= _('Submit') ?></button>
+
+</form>
+
