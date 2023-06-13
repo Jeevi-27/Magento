@@ -1,0 +1,41 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd"
+                 >
+    <table name="task" >
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" comment="Task Id"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="int" name="status"  nullable="false" default="0"  comment="0-Active, 1- In-Active"/>
+        <column xsi:type="timestamp" name="time_occurred"  comment="Time of event"/>
+        <column xsi:type="mediumtext" name="desc" nullable="true" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+   </table>
+
+    <table name="task_item">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" comment="Task Item Id"/>
+       <column xsi:type="int" name="task_id" padding="10" unsigned="true" nullable="false" comment="Task Id"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="int" name="status"  nullable="false" default="0"  comment="0-Active, 1- In-Active"/>
+        <column xsi:type="timestamp" name="time_occurred"  comment="Time of event"/>
+        <column xsi:type="mediumtext" name="desc" nullable="true" comment="Value"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+      
+        <index referenceId="INDEX_TASK_ID" indexType="btree">
+         <column name="task_id"/>
+        </index>
+
+        <constraint xsi:type="foreign" referenceId="FL_ALLOWED_TASKS" table="task_item_table"
+              column="task_id" referenceTable="task" referenceColumn="id"
+              onDelete="CASCADE"/>
+
+
+
+   </table>
+
+   
+
+
+</schema>

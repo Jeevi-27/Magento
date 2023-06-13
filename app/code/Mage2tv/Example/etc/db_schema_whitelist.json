@@ -1,0 +1,44 @@
+{
+    
+    "task_table": {
+        "column": {
+            "id": true,
+            "title": true,
+            "status": true,
+            "time_occurred": true,
+            "desc": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "task": {
+        "column": {
+            "id": true,
+            "title": true,
+            "status": true,
+            "time_occurred": true,
+            "desc": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "task_item": {
+        "column": {
+            "id": true,
+            "task_id": true,
+            "title": true,
+            "status": true,
+            "time_occurred": true,
+            "desc": true
+        },
+        "index": {
+            "TASK_ITEM_TASK_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "TASK_ITEM_TASK_ID_TASK_ID": true
+        }
+    }
+}
