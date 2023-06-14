@@ -1,9 +1,9 @@
-define([],function(){
+define(['ko'],function(ko){
     'use strict';
 
     return function(){
         return {
-            title :"This is title"
+            title :ko.observable("This is title ssadf")
         }
     }
 
