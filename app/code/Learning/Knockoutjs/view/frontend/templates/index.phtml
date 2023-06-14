@@ -28,5 +28,10 @@ If we want to change the title by console we need to use observable
 require('uiRegistry').get('startSimple').title()=suprise
  -->
 <div data-bind="scope: 'startSimple'"> 
-<h2 data-bind="text: title"></h2>
+<table data-bind="foreach: exchange_rates">
+    <tr>
+        <td data-bind="text : currency"></td>
+        <td data-bind="text : rate"></td>
+    </tr>
+</table>
 </div>
