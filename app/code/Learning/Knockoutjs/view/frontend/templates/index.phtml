@@ -26,12 +26,25 @@ require('uiRegistry').get('startSimple').title
 
 If we want to change the title by console we need to use observable
 require('uiRegistry').get('startSimple').title()=suprise
+
+---
+obserable array
+require('uiRegistry').get('startSimple').exchange_rates.push({currency:'russia',rate:'10'})
+require('uiRegistry').get('startSimple').exchange_rates.pop()
  -->
 <div data-bind="scope: 'startSimple'"> 
-<table data-bind="foreach: exchange_rates">
+<table>
+  <tr>
+        <td data-bind="il8n: Currency"></td>
+        <td data-bind="il8n : Rate"></td>
+    </tr>
+    <!-- virutal element -->
+    <!-- ko foreach: exchange_rates-->
+
     <tr>
         <td data-bind="text : currency"></td>
         <td data-bind="text : rate"></td>
     </tr>
+     <!-- /ko -->
 </table>
 </div>

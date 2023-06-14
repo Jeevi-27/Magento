@@ -7,7 +7,17 @@ define(['ko'],function(ko){
                 {
                     currency: 'USD',
                     rate :'70'
+                },
+                {
+                    currency: 'IN',
+                    rate :'50'
+                },
+
+                {
+                    currency: 'Japan',
+                    rate :'60'
                 }
+
 
             ])
         };
