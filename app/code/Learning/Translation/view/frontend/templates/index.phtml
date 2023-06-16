@@ -8,7 +8,8 @@ declare(strict_types=1);
             "Magento_Ui/js/core/app":{
                 "components":{
                     "startSimple":{
-                        "component" : "Learning_Translation/js/ui-component"
+                        "component" : "Learning_Translation/js/ui-component",
+                        "template" :"Learning_Translation/localized-template"
 
                     }
                 }
@@ -19,7 +20,7 @@ declare(strict_types=1);
 </script>
 
 <div data-bind="scope: 'startSimple'"> 
-     <span data-bind = "text:getTitle()"> </span>
+   <!--ko template :getTemplate() --><!-- /ko -->
 </div>
 
 <h1>Translationsss</h1>
