@@ -1,0 +1,26 @@
+<?php
+declare(strict_types=1);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "Magento_Ui/js/core/app":{
+                "components":{
+                    "startSimple":{
+                        "component" : "Learning_Translation/js/ui-component"
+
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+
+<div data-bind="scope: 'startSimple'"> 
+     <span data-bind = "text:getTitle()"> </span>
+</div>
+
+<h1>Translationsss</h1>
+

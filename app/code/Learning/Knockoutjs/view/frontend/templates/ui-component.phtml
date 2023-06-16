@@ -1,0 +1,24 @@
+<?php
+declare(strict_types=1);
+
+?>
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "Magento_Ui/js/core/app":{
+                "components":{
+                    "startSimple":{
+                        "component" : "Learning_Knockoutjs/js/ui-component"
+
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+<div data-bind="scope: 'startSimple'"> 
+
+     <!-- ko template: "Learning_Knockoutjs/ui-component-template" -->
+     <!-- /ko -->
+</div>
