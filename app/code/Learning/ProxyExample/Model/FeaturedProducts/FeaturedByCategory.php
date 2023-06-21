@@ -30,7 +30,7 @@ class FeaturedByCategory implements FeaturedProductsInterface{
             'Products_3',
             'Products_4',
             'Products_5',
-           // 'Products_6',
+            'Products_6',
         ];
     }
     
