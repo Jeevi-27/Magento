@@ -1,5 +1,5 @@
 {
-    "name": "learning/customtab",
+    "name": "learning/blog",
     "description": "A module that creates a page in the Magento admin area",
     "type": "magento2-module",
     "version": "1.0.0",
@@ -13,7 +13,7 @@
     "autoload": {
       "files": [ "registration.php" ],
       "psr-4": {
-        "Learning\\Customtab\\": ""
+        "Learning\\Blog\\": ""
       }
     }
   }
