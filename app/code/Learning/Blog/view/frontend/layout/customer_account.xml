@@ -10,7 +10,8 @@
        </arguments>
    </block>
 </referenceBlock>
-
+<!-- vendor/magento/module-newsletter/view/frontend/layout/customer_account.xml -->
+<referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
 
 </body>
 </page>
