@@ -13,5 +13,12 @@
 <!-- vendor/magento/module-newsletter/view/frontend/layout/customer_account.xml -->
 <referenceBlock name="customer-account-navigation-newsletter-subscriptions-link" remove="true"/>
 
+
+<referenceBlock name="customer-account-navigation-wish-list-link">
+   <arguments>
+       <argument name="sortOrder" xsi:type="number">500</argument>
+   </arguments>
+</referenceBlock>
+
 </body>
 </page>
