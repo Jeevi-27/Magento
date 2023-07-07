@@ -67,7 +67,7 @@ class Collection extends AbstractCollection implements SearchResultInterface {
      * @return array
      */
     public function getAllIds($limit = null, $offset = null) {
-        die('sdjf');
+      
         return $this->getConnection()->fetchCol($this->_getAllIdsSelect($limit, $offset), $this->_bindParams);
     }
 

@@ -62,6 +62,29 @@
                                                         </item>
                                                     </item>
                                                 </item>
+                                                 <!-- Re order the shipping fields start-->
+                                                <item name="shipping-step" xsi:type="array">
+                                                                            <item name="children" xsi:type="array">
+                                                                                <item name="shippingAddress" xsi:type="array">
+                                                                                    <item name="children" xsi:type="array">
+                                                                                        <!-- The name of the form the field belongs to -->
+                                                                                        <item name="shipping-address-fieldset" xsi:type="array">
+                                                                                            <item name="children" xsi:type="array">
+
+                                                                                                <item name="country_id" xsi:type="array">
+                                                                                                    <item name="sortOrder" xsi:type="string">11</item>
+                                                                                                </item>
+                                                                                                <item name="postcode" xsi:type="array">
+                                                                                                    <item name="sortOrder" xsi:type="string">15</item>
+                                                                                                </item>
+                                            
+                                                                                            </item>
+                                                                                        </item>
+                                                                                    </item>
+                                                                                </item>
+                                                                            </item>
+                                                </item>
+                                                 <!-- Re order the shipping fields end-->
                                         </item>
                                     </item>
                                 </item>
