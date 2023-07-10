@@ -1,0 +1,23 @@
+<form class="form create account form-create-account" data-mage-init='{"validation": {}}' action="<?= /* @escapeNotVerified */ $block->getActionUrl() ?>" method="post" id="form-validate" name="feedback_form" autocomplete="off">
+    <fieldset class="fieldset create info" >
+        <div class="field required">
+
+            <label for="content" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Content') ?></span>
+            </label>
+
+            <div class="control">
+                <textarea id="content"    data-validate='{"required":true}' name="comment" ></textarea>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+
+</form>
