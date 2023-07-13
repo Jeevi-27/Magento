@@ -1,0 +1,131 @@
+<?php
+namespace Assessment\Task\Model\Api;
+use Assessment\Task\Api\TaskInterface;
+use Assessment\Task\Model\TaskFactory;
+class TaskRepository implements TaskInterface
+{
+
+    const SEVERE_ERROR = 0;
+    const SUCCESS = 1;
+    const LOCAL_ERROR = 2;
+
+
+    protected $taskFactory;
+ 
+    public function __construct(TaskFactory $taskFactory)
+    {
+        $this->taskFactory = $taskFactory;
+    }
+
+    /** * @return string */
+    public function getList(int $pageId = null)
+    {
+        if ($pageId == null) {
+            $pageId = 1;
+        }
+        $data = [];
+        try {
+  return "hg";
+            // $cartCollection = $this->collectionFactory->create()->setPageSize(5)->setCurPage($pageId);
+
+            // foreach ($cartCollection as $item) {
+            //     $dataInterface = $this->dataInterfaceFactory->create();
+            //     $dataInterface->setId($item->getId());
+            //     $dataInterface->setSku($item->getSku());
+            //     $dataInterface->setCustomerId($item->getCustomerId());
+            //     $dataInterface->setQuoteId($item->getQuoteId());
+            //     $dataInterface->setCreatedAt($item->getCreatedAt());
+            //     $data[] = $dataInterface;
+            // }
+            // return $data;
+            $data = $this->taskFactory->create()->getCollection()->getData();
+            return $data;
+        } catch (\Exception $e) {
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+ 
+    /** * GET for Post api * @param string $title * @return string */
+    public function save(string $sku, int $quoteId, int $customerId = null, $createdAt = null)
+    {
+        $insertData = $this->taskFactory->create();
+        try {
+                $insertData->setSku($sku);
+                $insertData->setQuoteId($quoteId);
+                $insertData->setCustomerId($customerId);
+
+                if ($createdAt != null) {
+                    $insertData->setCreatedAt($createdAt);
+                }
+            $response = ['success' => true, 'message' => $data];
+        } catch (\Exception $e) {
+            $response = ['success' => false, 'message' => $e->getMessage()];
+        }
+        return $response;
+       
+    }
+
+    /** * @param int $id * @return string */
+    public function getById($id)
+    {
+        try {
+            if ($id) {
+                $data = $this->taskFactory->create()->load($id)->getData();
+                return ['success' => true, 'message' => json_encode($data)];
+            }
+        } catch (\Exception $e) {
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
+
+    public function update($id, string $sku = null, int $quoteId = null, int $customerId = null, $createdAt = null)
+    {
+        $model = $this->taskFactory->create();
+        $this->task->load($task, $id, 'id');
+        if(!$model->getData()){
+            return ['success' => 'ID is not Available'];
+        }
+        if ($sku != null) {
+            $model->setSku($sku);
+        }
+
+        if ($quoteId != null) {
+            $model->setQuoteId($quoteId);
+        }
+
+        if ($customerId != null) {
+            $model->setCustomerId($customerId);
+        }
+
+        if ($createdAt != null) {
+            $model->setCreatedAt($createdAt);
+        }
+        try {
+            $this->taskFactory->save($model);
+            return ['success' => 'Updated Successfully'];
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+ 
+    
+ 
+    /** * @param int $id * @return bool true on success */
+    public function getDelete($id)
+    {
+        try {
+            if ($id) {
+                $data = $this->taskFactory->create()->load($id);
+                $data->delete();
+                return "success";
+            }
+        } catch (\Exception $e) {
+            $response = ['success' => false, 'message' => $e->getMessage()];
+        }
+        return "false";
+    }
+ 
+    
+ 
+    
+}
