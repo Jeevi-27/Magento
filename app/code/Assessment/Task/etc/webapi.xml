@@ -2,7 +2,7 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
 
 <route method="GET" url="/V1/assessment-task/api/getlist">
-<service class="Assessment\Task\Api\TestApiManagementInterface" method="getApiData"/>
+<service class="Assessment\Task\Api\TaskInterface" method="getApiData"/>
 <resources>
 <resource ref="anonymous"/>
 </resources>
@@ -10,7 +10,7 @@
 
 
 <route method="POST" url="/V1/assessment-task/api/save">
-<service class="Assessment\Task\Api\TestApiManagementInterface" method="save"/>
+<service class="Assessment\Task\Api\TaskInterface" method="save"/>
 <resources>
 <resource ref="anonymous"/>
 </resources>
@@ -19,7 +19,7 @@
 
 
 <route method="GET" url="/V1/assessment-task/api/getid">
-<service class="Assessment\Task\Api\TestApiManagementInterface" method="getById"/>
+<service class="Assessment\Task\Api\TaskInterface" method="getById"/>
 <resources>
 <resource ref="anonymous"/>
 </resources>
@@ -27,14 +27,14 @@
 
 
 <route method="POST" url="/V1/assessment-task/api/edit">
-<service class="Assessment\Task\Api\TestApiManagementInterface" method="update"/>
+<service class="Assessment\Task\Api\TaskInterface" method="update"/>
 <resources>
 <resource ref="anonymous"/>
 </resources>
 </route>
 
 <route method="POST" url="/V1/assessment-task/api/delete">
-<service class="Assessment\Task\Api\TestApiManagementInterface" method="delete"/>
+<service class="Assessment\Task\Api\TaskInterface" method="delete"/>
 <resources>
 <resource ref="anonymous"/>
 </resources>

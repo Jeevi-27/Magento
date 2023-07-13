@@ -1,12 +1,9 @@
 <?php
 namespace Assessment\Task\Model\Api;
 use Magento\Framework\Exception\LocalizedException;
-class TestApiManagement implements \Assessment\Task\Api\TestApiManagementInterface
+class TaskRespository implements \Assessment\Task\Api\TaskInterface
 {
-    const SEVERE_ERROR = 0;
-    const SUCCESS = 1;
-    const LOCAL_ERROR = 2;
-    protected $_testApiFactory;
+  
     public function __construct(
         \Assessment\Task\Model\TaskFactory $testApiFactory,
         \Assessment\Task\Model\ResourceModel\Task  $resource
@@ -21,7 +18,7 @@ class TestApiManagement implements \Assessment\Task\Api\TestApiManagementInterfa
      *
      * @param int $id
      *
-     * @return \Webkul\TestApi\Api\Data\TestApiInterface
+     * @return \Assessment\Task\Api\TaskInterface
      */
     public function getApiData(int $pageId = null)
     {
@@ -72,14 +69,13 @@ class TestApiManagement implements \Assessment\Task\Api\TestApiManagementInterfa
         // }
     }
 
-    public function save(string $sku, int $quoteId, int $customerId = null, $created = null)
+    public function save(string $sku, int $quoteId, int $customerId = null)
     {
         
         $data = [
             'sku'         => $sku,
             'customer_id' => $customerId,
-            'quote_id'    => $quoteId,
-            'created' => $created
+            'quote_id'    => $quoteId
         ];
 
         try {
@@ -108,7 +104,7 @@ class TestApiManagement implements \Assessment\Task\Api\TestApiManagementInterfa
 
     }
 
-    public function update(int $id, string $sku, int $quoteId, int $customerId = null, $created = null)
+    public function update(int $id, string $sku, int $quoteId, int $customerId = null )
     {
 
         
@@ -133,10 +129,7 @@ class TestApiManagement implements \Assessment\Task\Api\TestApiManagementInterfa
                 $form->setData('quote_id', $quoteId);
             }
     
-            if($created)
-            {
-                $form->setData('created', $created);
-            }
+          
             $this->resource->save($form);
             $response = ['success' => 'Updated Successfully'];
             return $response;

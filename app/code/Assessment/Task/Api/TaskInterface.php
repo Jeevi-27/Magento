@@ -2,37 +2,60 @@
 namespace Assessment\Task\Api;
 interface TaskInterface
 {
-   
     /**
-     * @return string
-     */
-    public function getList(int $pageId = null);
-
-  /**
-     * GET for Post api
-     * @param string $title
-     * @return string
-     */
-    public function save($data);
-
-      /**
+     * get test Api data.
+     *
+     * @api
+     *
      * @param int $id
-     * @return string
+     *
+     * @return \Assessment\Task\Api\TaskInterface
      */
-    public function getById($id);
- 
-    /**
-     * GET for Post api
-     * @param string $data
-     * @return string
-     */
-    public function update($data);
-    /**
-     * @param int $id
-     * @return bool true on success
-     */
-    public function delete($id);
+    public function getApiData(int $pageId = null);
 
-}
- 
+
+   /**
+     * @param string $sku
+     * @param int $quoteId
+     * @param int $customerId
+     * @param $created
+     *  @return \Assessment\Task\Api\TaskInterface
+     */
+    public function save(string $sku, int $quoteId, int $customerId = null);
+
+/**
+     * get test Api data.
+     *
+     * @api
+     *
+     * @param int $id
+     *
+     * @return \Assessment\Task\Api\TaskInterface
+     */
+    public function getById(int $id);
+
+     /**
+      *  @param int $id
+     * @param string $sku
+     * @param int $quoteId
+     * @param int $customerId
+     * @param $created
+     *  @return \Assessment\Task\Api\TaskInterface
+     */
   
+
+    public function update(int $id, string $sku, int $quoteId, int $customerId = null);
+
+
+/**
+     * get test Api data.
+     *
+     * @api
+     *
+     * @param int $id
+     *
+     * @return \Assessment\Task\Api\TaskInterface
+     */
+    public function delete(int $id);
+}
+
