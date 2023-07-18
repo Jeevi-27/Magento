@@ -3,7 +3,7 @@
 namespace Assessment\Task\Model\ResourceModel;
 
 
-class Task extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+class TrackingProduct extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
     
     /**
