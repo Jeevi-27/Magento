@@ -4,8 +4,8 @@ use Magento\Framework\Event\Observer as EventObserver;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Customer\Model\SessionFactory;
-use Assessment\Task\Model\TrackingProductFactory as TrackingProductModel;
-use Assessment\Task\Model\ResourceModel\TrackingProduct as TrackingProductResource;
+use Assessment\Task\Model\TrackingClientFactory as TrackingClientModel;
+use Assessment\Task\Model\ResourceModel\TrackingClient as TrackingClientResource;
 
 
 
@@ -23,8 +23,8 @@ class Addcart implements ObserverInterface
     public function __construct(
         CheckoutSession $checkoutSession,
         SessionFactory $session,
-        TrackingProductModel $model,
-        TrackingProductResource $resource,
+        TrackingClientModel $model,
+        TrackingClientResource $resource,
         \Magento\Framework\MessageQueue\PublisherInterface $publisher,
         \Magento\Framework\Json\Helper\Data $jsonHelper
     )

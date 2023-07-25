@@ -1,12 +1,8 @@
 <?php
-
 namespace Assessment\Task\Model\ResourceModel;
-
-
-class TrackingProduct extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
+class TrackingClient extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
 {
-    
-    /**
+     /**
      * Resource initialisation
      * @codingStandardsIgnoreStart
      */

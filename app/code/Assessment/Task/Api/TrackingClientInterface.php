@@ -1,7 +1,7 @@
 <?php
 namespace Assessment\Task\Api;
 
-interface TrackingProductInterface
+interface TrackingClientInterface
 {
    /**
      * @param int|null $pageId
@@ -18,7 +18,7 @@ interface TrackingProductInterface
      */
     public function save(string $sku, int $quoteId, int $customerId = null);
 
- 
+
   /**
      * @param int $id
      * @return \Assessment\Task\Api\DataInterface[]

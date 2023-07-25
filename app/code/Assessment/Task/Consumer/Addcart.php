@@ -4,28 +4,25 @@ namespace Assessment\Task\Consumer;
 
 use _PHPStan_76800bfb5\Composer\CaBundle\CaBundle;
 use Magento\Framework\Serialize\SerializerInterface;
-use Assessment\Task\Model\TrackingProductFactory;
+use Assessment\Task\Model\TrackingClientFactory;
 
 class Addcart
-{
-    
+{ 
     /**
      * @var SerializerInterface
      */
     protected $serializer;
 
     /**
-     * @var TrackingProductFactory
+     * @var TrackingClientFactory
      */
     protected $model;
-
-
     /**
      * @param SerializerInterface $serializer
      */
     public function __construct(
         SerializerInterface $serializer,
-        TrackingProductFactory $model
+        TrackingClientFactory $model
     ) {
         $this->serializer = $serializer;
         $this->model = $model;
